@@ -22,7 +22,30 @@ public class LesBlogg {
 
 	public static Blogg les(String mappe, String filnavn) {
 
-		throw new UnsupportedOperationException(TODO.method());
-
+		
+		/*Åpnerfilen for lesing
+		 * Les inn(første) linje fra filen
+		 * Gjenta til slutten på filen
+		 * 		Behandle innlest linje
+		 * 		Les inn(neste) linje fra filen
+		 * Lukk filen
+		 */
+		try {
+			
+			File file = new File(mappe + filnavn);
+			BufferedReader reader = new BufferedReader(new FileReader(file));
+		
+			String line;
+			while(reader.ready()) {
+				line = reader.readLine();
+				System.out.println(line);
+			}
+			reader.close();
+			
+			}catch (Exception e) {
+		
+			}
+		return null;
+			}
 	}
-}
+
